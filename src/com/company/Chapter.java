@@ -94,7 +94,7 @@ public class Chapter implements Cloneable {
 
     public void generateFileChapter() {
         String fileName = this.chapterNumber + "." + this.chapterName;
-        String filePath = Chapter.RESULT_DIRECTORY + fileName;
+        String filePath = Chapter.RESULT_DIRECTORY + fileName + ".txt";
         try {
             File chapter = new File(filePath);
             if (chapter.createNewFile()) {
