@@ -51,7 +51,13 @@ public class Main {
             return true;
         }
 
-        if (data.trim().equals("#")) {
+        pattern = Pattern.compile("\\u11ff\\u051e\\u0e0e\\u04de\\u143f\\u0541\\u0751");
+        if (pattern.matcher(data).find()) {
+            return true;
+        }
+
+        pattern = Pattern.compile("\\s*#[0-9]*\\s*");
+        if (pattern.matcher(data).find()) {
             return true;
         }
 
@@ -175,11 +181,13 @@ public class Main {
     }
 
     private static void checkCode() {
-        System.out.println( "\\u" + Integer.toHexString('ả' | 0x10000).substring(1) );
-        System.out.println( "\\u" + Integer.toHexString('ờ' | 0x10000).substring(1) );
-        System.out.println( "\\u" + Integer.toHexString('è' | 0x10000).substring(1) );
-        System.out.println( "\\u" + Integer.toHexString('í' | 0x10000).substring(1) );
-        System.out.println( "\\u" + Integer.toHexString('ẫ' | 0x10000).substring(1) );
+        System.out.println( "\\u" + Integer.toHexString('ᇿ' | 0x10000).substring(1) );
+        System.out.println( "\\u" + Integer.toHexString('Ԟ' | 0x10000).substring(1) );
+        System.out.println( "\\u" + Integer.toHexString('ฎ' | 0x10000).substring(1) );
+        System.out.println( "\\u" + Integer.toHexString('Ӟ' | 0x10000).substring(1) );
+        System.out.println( "\\u" + Integer.toHexString('ᐿ' | 0x10000).substring(1) );
+        System.out.println( "\\u" + Integer.toHexString('Ձ' | 0x10000).substring(1) );
+        System.out.println( "\\u" + Integer.toHexString('ݑ' | 0x10000).substring(1) );
 
 //        Cẩm Y Xuân Thu
         Pattern pattern = Pattern.compile("^[\\s]*Tr\\u1ea3[\\s]l\\u1eddi[\\s]*[\\s]*Tr\\u1ea3[\\s]l\\u1eddi[\\s]*k\\u00e8m[\\s]*Tr\\u00edch[\\s]*d\\u1eabn[\\s]*");
